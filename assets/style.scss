@@ -195,7 +195,7 @@ a.link-highlight:hover::before {
 
 .content {
   background: $color-white;
-  padding: 7rem 0 0;
+  padding: 2rem 0 0;
   margin-bottom: 31.24rem;
   position: relative;
   top: 0;
@@ -240,14 +240,14 @@ a.link-highlight:hover::before {
 
   @media (min-width: $breakpoint-medium) {
     li {
-      width: 33.33333%;
+      width: 25%;
     }
   }
 
   li {
     margin-bottom: 3rem;
 
-    &:last-child {
+    :last-child {
       margin-bottom: 0;
     }
   }
@@ -256,51 +256,9 @@ a.link-highlight:hover::before {
     display: block;
 
     &:hover {
-      .img-wrapper {
-        &:before {
-          opacity: 1;
-        }
-        &:after {
-          opacity: .45;
-        }
+      .member-title {
+        color: $color-black;
       }
-    }
-  }
-
-  .img-wrapper {
-    position: relative;
-
-    &:before {
-      content: "Visit Site";
-      color: $color-white;
-      @extend .h2;
-      font-weight: 800;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -.5rem;
-      margin-left: -4.4rem;
-      opacity: 0;
-      -webkit-transition: all .5s ease-in-out;
-        transition: all .5s ease-in-out;
-        -webkit-transition-delay: .25s;
-        transition-delay: .25s;
-        z-index: 2;
-    }
-
-    &:after {
-      background: #000;
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: 0;
-      -webkit-transition: all .25s ease-in-out;
-        transition: all .25s ease-in-out;
-        z-index: 1;
     }
   }
 

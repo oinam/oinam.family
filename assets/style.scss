@@ -1,0 +1,339 @@
+---
+---
+
+@charset "UTF-8";
+
+/* settings */
+$font-family-serif: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif !default;
+$font-family-sans-serif: Bitter, "Apple SD Gothic Neo", "Noto Sans", "Source Han Sans", "Noto Sans CJK JP", "Source Han Sans JP", "Noto Sans CJK KR", "Source Han Sans KR", NanumBarunGothic, AppleGothic, "Malgun Gothic", Dotum, sans-serif !default;
+$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", DotumChe, monospace !default;
+
+$font-default: $font-family-sans-serif;
+
+$color-white: #fff;
+$color-black: #333;
+$color-darker: lighten($color-black, 25%);
+$color-silver-chalice: #aaa;
+$color-alabaster: #fafafa;
+$color-tango: #f46f25;
+$color-white-sand: #f6f6f6;
+
+$breakpoint-xsmall: 400px;
+$breakpoint-small: 550px;
+$breakpoint-medium: 750px;
+$breakpoint-large: 1000px;
+$breakpoint-xlarge: 1200px;
+/* /settings */
+
+/* mixins */
+@mixin clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+/* /mixins */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $color-white;
+  color: $color-black;
+  font-family: $font-default;
+  font-size: 1.8em;
+  line-height: 1.6;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-sans-serif;
+}
+
+h1,
+.h1 {
+  color: $color-black;
+  font-size: 2.7rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+}
+
+h2,
+.h2 {
+  color: $color-silver-chalice;
+  display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    line-height: 1;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+}
+
+h3,
+.h3 {
+  color: $color-black;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: $color-black;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+hr {
+  background: $color-silver-chalice;
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: 3rem 0;
+
+  @media (min-width: $breakpoint-medium) {
+    margin: 4.5rem 0;
+  }
+}
+
+abbr[title] {
+  border-bottom: 1px dotted $color-black;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: .6rem solid $color-black;
+  padding-left: 2rem;
+  margin: 0 0 3rem;
+
+  p {
+    font-style: italic;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    padding-left: 3rem;
+  }
+}
+
+pre {
+  margin: 0 0 3rem;
+}
+
+/* site design */
+a.link-highlight {
+  position: relative;
+  z-index: 1;
+}
+
+a.link-highlight::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -0.25em;
+  right: -0.25em;
+  background-color: $color-tango;
+  transform-origin: bottom center;
+  transform: scaleY(0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+a.link-highlight:hover::before {
+  transform: scaleY(1);
+  background-color: $color-tango;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 70em;
+  padding: 0 3rem;
+  @include clearfix;
+}
+
+.header {
+  background: $color-white;
+  padding: 2rem 0;
+}
+
+.logo {
+  float: left;
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.nav {
+  float: right;
+
+  a {
+    @extend .logo;
+  }
+}
+
+.content {
+  background: $color-white;
+  padding: 7rem 0 0;
+  margin-bottom: 31.24rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @media (min-width: $breakpoint-medium) {
+    padding: 6rem 0 0;
+    margin-bottom: 23.42rem;
+  }
+}
+
+.intro,
+.members {
+  padding: 0 0 5rem;
+}
+
+.intro {
+  @media (min-width: $breakpoint-medium) {
+    p {
+      font-size: 2rem;
+      max-width: 66.66666%;
+    }
+  }
+}
+
+.members-list {
+  @media (min-width: $breakpoint-small) {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    @include clearfix;
+
+    li {
+      float: left;
+      width: 50%;
+    }
+
+    a {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    li {
+      width: 33.33333%;
+    }
+  }
+
+  li {
+    margin-bottom: 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    display: block;
+
+    &:hover {
+      .img-wrapper {
+        &:before {
+          opacity: 1;
+        }
+        &:after {
+          opacity: .45;
+        }
+      }
+    }
+  }
+
+  .img-wrapper {
+    position: relative;
+
+    &:before {
+      content: "Visit Site";
+      color: $color-white;
+      @extend .h2;
+      font-weight: 800;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -.5rem;
+      margin-left: -4.4rem;
+      opacity: 0;
+      -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        -webkit-transition-delay: .25s;
+        transition-delay: .25s;
+        z-index: 2;
+    }
+
+    &:after {
+      background: #000;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        z-index: 1;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .member-title {
+    color: $color-darker;
+    padding: 0.5rem 0;
+  }
+}
+
+.footer {
+  background: $color-alabaster;
+  bottom: 0;
+  left: 0;
+  padding: 5rem 0;
+  position: fixed;
+  right: 0;
+  z-index: -1;
+}
+
+.contact,
+.follow {
+  @media (min-width: $breakpoint-medium) {
+    float: left;
+    margin-bottom: 0;
+    width: 33.33333%;
+  }
+}
+
+.contact,
+.follow {
+  margin-bottom: 3rem;
+}

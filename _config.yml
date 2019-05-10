@@ -1,0 +1,28 @@
+url: https://oinam.family
+baseurl: ''
+name: "Oinam Family"
+author: "Oinam"
+tagline: "The Oinam Family"
+description: ""
+keywords: "Oinam, Brajeshwar, Shanta, Laaija, Amara"
+email: "oinam@oinam.com"
+
+# connect
+instagram: "https://www.instagram.com/oinam/"
+twitter: "https://twitter.com/oinam/"
+github: "https://github.com/oinam/"
+
+# styles
+sass:
+  sass_dir: assets/scss
+  style: compressed
+
+# Dependencies
+markdown: kramdown
+highlighter: rouge
+
+# Permalinks
+permalink: pretty
+
+# exclude
+exclude: ["README.md"]
